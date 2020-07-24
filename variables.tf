@@ -18,3 +18,28 @@ variable "azure-tenant-id" {
   type        = string
   description = "Azure Tenant Id"
 }
+
+
+#The Cloud-init script path
+    variable "CloudinitscriptPath" {  
+    type = "string"
+    }
+    
+    variable "VMAdminName" {  
+    type = "string"
+    }
+    
+    variable "VMAdminPassword" {  
+    type = "string"
+    }
+
+    variable "vmsizes" {  
+    type = "string"
+    }
+    
+    
+    variable "ADMdefault" {  
+    type = "string"
+    }
+
+
