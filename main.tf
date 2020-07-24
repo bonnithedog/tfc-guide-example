@@ -26,21 +26,17 @@
 #    user_name = var.tag_user_name
 #  }
 #}
+variable "client_secret" {
+}
+
 provider "azurerm" {
   # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
-  version = "=1.44.0"
+  version = "=2.4.0"
 
-  subscription_id = "*************"
+  subscription_id = "00000000-0000-0000-0000-000000000000"
+  client_id       = "00000000-0000-0000-0000-000000000000"
+  client_secret   = var.client_secret
+  tenant_id       = "00000000-0000-0000-0000-000000000000"
 
-  tenant_id = "*********************"
+  features {}
 }
-#
-#resource "azurerm_resource_group" "itmanaged" {
-#  name     = "itmanagerResourceGroup1"
-#  location = "NorthEurope"
-#
-#  tags = {
-#    environment = "Production"
-#  }
-#}
-#
