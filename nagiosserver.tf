@@ -16,7 +16,7 @@ resource "azurerm_public_ip" "nagios_publicip" {
 resource "azurerm_network_interface" "nagios_nic" {
     name                      = "nagios_NIC"
     location                  = "northeurope"
-    resource_group_name       = azurerm_resource_group.rg001a.name
+    #resource_group_name       = azurerm_resource_group.rg001a.name
     network_security_group_id = azurerm_network_security_group.nagios_sg.id
 
     ip_configuration {
