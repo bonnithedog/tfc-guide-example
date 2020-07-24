@@ -30,11 +30,6 @@
 #}
 
 
-variable "subscription_id" {} 
-variable "client_id" {} 
-variable "client_secret" {} 
-variable "tenant_id" {} 
-
 provider "azurerm" {
   # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
   version = "=2.4.0"
