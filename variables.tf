@@ -22,3 +22,7 @@
 #  type = string
 #}
 #
+
+variable "client_secret" {
+  type = string
+}
