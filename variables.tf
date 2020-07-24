@@ -22,7 +22,7 @@ variable "azure-tenant-id" {
 
 #The Cloud-init script path
     variable "CloudinitscriptPath" {  
-    type = "string"
+    type = string
     }
     
     variable "VMAdminName" {  
