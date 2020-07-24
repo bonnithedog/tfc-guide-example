@@ -4,20 +4,20 @@
     }
     
     variable "VMAdminName" {  
-    type = "string"
+    type = string
     }
     
     variable "VMAdminPassword" {  
-    type = "string"
+    type = string
     }
 
     variable "vmsizes" {  
-    type = "string"
+    type = string
     }
     
     
     variable "ADMdefault" {  
-    type = "string"
+    type = string
     }
 
 
