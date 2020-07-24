@@ -3,7 +3,7 @@
 resource "azurerm_public_ip" "nagios_publicip" {
     name                         = "nagios_PublicIP"
     location                     = "northeurope"
-    resource_group_name          = "${azurerm_resource_group.nagios_resourcegroup.name}"
+    resource_group_name          = ""azurerm_resource_group.nagios_resourcegroup.name"
     allocation_method            = "Static"
 
     tags {
