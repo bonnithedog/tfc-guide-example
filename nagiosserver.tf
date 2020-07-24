@@ -80,9 +80,9 @@ resource "azurerm_virtual_machine" "nagios" {
         storage_uri = azurerm_storage_account.nagios_storageaccount.primary_blob_endpoint
     }
 
-    tags {
-        environment = "NAGIOS"
-    }
+    #tags {
+    #    environment = "NAGIOS"
+    #}
 }
 output "ipNAGIOS" {
   value = azurerm_public_ip.nagios_publicip.ip_address
