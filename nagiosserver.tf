@@ -84,6 +84,6 @@ resource "azurerm_virtual_machine" "nagios" {
         environment = "NAGIOS"
     }
 }
-output "ip NAGIOS" {
+output "ipNAGIOS" {
   value = "${azurerm_public_ip.nagios_publicip.ip_address}"
 }
