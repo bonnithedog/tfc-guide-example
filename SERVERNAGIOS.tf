@@ -77,7 +77,7 @@ resource "azurerm_virtual_machine" "nagios" {
 
     boot_diagnostics {
         enabled = "true"
-        storage_uri = "${azurerm_storage_account.nagios_storageaccount.primary_blob_endpoint}"
+        storage_uri = "azurerm_storage_account.nagios_storageaccount.primary_blob_endpoint"
     }
 
     tags {
