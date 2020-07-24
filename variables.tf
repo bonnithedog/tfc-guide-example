@@ -21,7 +21,7 @@ variable "azure-tenant-id" {
 
 
 #The Cloud-init script path
-    rootvar "CloudinitscriptPath" {  
+    variable "CloudinitscriptPath" {  
     type = string
     }
     
