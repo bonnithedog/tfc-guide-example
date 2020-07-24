@@ -39,9 +39,9 @@ resource "azurerm_network_interface" "nagios_nic" {
 resource "azurerm_virtual_machine" "nagios" {
     name                  = "nagios"
     location              = "northeurope"
-    resource_group_name   = "${azurerm_resource_group.nagios_resourcegroup.name}"
-    network_interface_ids = ["${azurerm_network_interface.nagios_nic.id}"]
-    vm_size              = "${var.vmsizes}"
+    resource_group_name   = "azurerm_resource_group.nagios_resourcegroup.name"
+    network_interface_ids = "azurerm_network_interface.nagios_nic.id"
+    vm_size              = "var.vmsizes"
     
     
 #  Uncomment this line to delete the OS disk automatically when deleting the VM
@@ -66,8 +66,8 @@ resource "azurerm_virtual_machine" "nagios" {
 
     os_profile {
         computer_name  = "nagios"
-        admin_username = "${var.VMAdminName}"
-        admin_password = "${var.VMAdminPassword}"
+        admin_username = "var.VMAdminName"
+        admin_password = "var.VMAdminPassword"
         #custom_data = "${file("${path.root}${var.CloudinitscriptPath}")}"
     }
 
