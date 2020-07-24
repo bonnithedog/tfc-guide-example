@@ -3,11 +3,11 @@
 resource "azurerm_public_ip" "nagios_publicip" {
     name                         = "nagios_PublicIP"
     location                     = "northeurope"
-    resource_group_name          = ""azurerm_resource_group.nagios_resourcegroup.name"
-    allocation_method            = "Static"
+    resource_group_name          = "azurerm_resource_group.nagios_resourcegroup.name"
+    allocation_method            = Static
 
     tags {
-        environment = "NAGIOS"
+        environment = NAGIOS
     }
 }
 
@@ -16,14 +16,14 @@ resource "azurerm_public_ip" "nagios_publicip" {
 resource "azurerm_network_interface" "nagios_nic" {
     name                      = "nagios_NIC"
     location                  = "northeurope"
-    resource_group_name       = "${azurerm_resource_group.nagios_resourcegroup.name}"
-    network_security_group_id = "${azurerm_network_security_group.nagios_sg.id}"
+    resource_group_name       = "azurerm_resource_group.nagios_resourcegroup.name"
+    network_security_group_id = "azurerm_network_security_group.nagios_sg.id"
 
     ip_configuration {
         name                          = "nagios_NICConfiguration"
-        subnet_id                     = "${azurerm_subnet.nagios_subnet.id}"
+        subnet_id                     = "azurerm_subnet.nagios_subnet.id"
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = "${azurerm_public_ip.nagios_publicip.id}"
+        public_ip_address_id          = "azurerm_public_ip.nagios_publicip.id"
     }
 
     tags {
