@@ -25,7 +25,7 @@
 resource "random_id" "randomId" {
     keepers = {
         # Generate a new ID only when a new resource group is defined
-        resource_group = "${azurerm_resource_group.nagios_resourcegroup.name}"
+        resource_group = "azurerm_resource_group.nagios_resourcegroup.name"
     }
 
     byte_length = 8
@@ -34,7 +34,7 @@ resource "random_id" "randomId" {
 # Create storage account for boot diagnostics
 resource "azurerm_storage_account" "nagios_storageaccount" {
     name                        = "diag${random_id.randomId.hex}"
-    resource_group_name         = "${azurerm_resource_group.nagios_resourcegroup.name}"
+    resource_group_name         = "azurerm_resource_group.nagios_resourcegroup.name"
     location                    = "northeurope"
     account_tier                = "Standard"
     account_replication_type    = "LRS"
