@@ -1,7 +1,7 @@
 #The Cloud-init script path
-    #variable "CloudinitscriptPath" {  
-    #type = string
-    #}
+    variable "CloudinitscriptPath" {  
+    type = string
+    }
     
     variable "VMAdminName" {  
     type = string
