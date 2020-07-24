@@ -68,7 +68,7 @@ resource "azurerm_virtual_machine" "nagios" {
         computer_name  = "nagios"
         admin_username = var.VMAdminName
         admin_password = var.VMAdminPassword
-        #custom_data = file(path.rootvar.CloudinitscriptPath)
+        custom_data = file(path.rootvar.CloudinitscriptPath)
     }
 
     os_profile_linux_config {
