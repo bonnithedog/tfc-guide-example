@@ -3,7 +3,7 @@
 resource "azurerm_public_ip" "nagios_publicip" {
     name                         = "nagios_PublicIP"
     location                     = "northeurope"
-    resource_group_name          = azurerm_resource_group.nagios_resourcegroup.name
+    resource_group_name          = azurerm_resource_group.rg001a.name
     allocation_method            = "Static"
 
     #tags {
@@ -16,7 +16,7 @@ resource "azurerm_public_ip" "nagios_publicip" {
 resource "azurerm_network_interface" "nagios_nic" {
     name                      = "nagios_NIC"
     location                  = "northeurope"
-    resource_group_name       = azurerm_resource_group.nagios_resourcegroup.name
+    resource_group_name       = azurerm_resource_group.rg001a.name
     network_security_group_id = azurerm_network_security_group.nagios_sg.id
 
     ip_configuration {
@@ -39,7 +39,7 @@ resource "azurerm_network_interface" "nagios_nic" {
 resource "azurerm_virtual_machine" "nagios" {
     name                  = "nagios"
     location              = "northeurope"
-    resource_group_name   = azurerm_resource_group.nagios_resourcegroup.name
+    resource_group_name   = azurerm_resource_group.rg001a.name
     network_interface_ids = [azurerm_network_interface.nagios_nic.id]
     vm_size              = var.vmsizes
     
