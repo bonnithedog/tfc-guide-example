@@ -1,3 +1,8 @@
+variable "subscription_id" {} 
+variable "client_id" {} 
+variable "client_secret" {} 
+variable "tenant_id" {} 
+
 #variable "aws_region" {
 #  type    = string
 #  default = "us-west-1"
