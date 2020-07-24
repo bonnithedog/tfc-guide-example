@@ -16,7 +16,7 @@ resource "azurerm_storage_account" "nagios_storageaccount" {
     account_tier                = "Standard"
     account_replication_type    = "LRS"
 
-    tags {
-        environment = "NAGIOS"
-    }
+   # tags {
+   #     environment = "NAGIOS"
+   # }
 }
