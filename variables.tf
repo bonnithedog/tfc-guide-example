@@ -41,6 +41,8 @@ variable "azure-tenant-id" {
     variable "ADMdefault" {  
     type = string
     }
+
+
 # Generate random text for a unique storage account name
 resource "random_id" "randomId" {
     keepers = {
