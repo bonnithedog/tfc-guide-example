@@ -41,10 +41,10 @@ provider "azurerm" {
   
 
 
-  subscription_id = var.subscription_id
-  client_id       = var.client_id
-  client_secret   = var.client_secret
-  tenant_id       = var.tenant_id
+  subscription_id = var.azure-subscription-id
+  client_id       = var.azure-client-id
+  client_secret   = var.azure-client-secret 
+  tenant_id       = var.azure-tenant-id
 
   features {}
 }
