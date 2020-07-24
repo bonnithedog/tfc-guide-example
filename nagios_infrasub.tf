@@ -18,7 +18,7 @@ resource "azurerm_virtual_network" "nagios_vnet" {
     name                = "nagios_vnet"
     address_space       = ["16.0.0.0/8"]
     location            = "northeurope"
-    resource_group_name = "${azurerm_resource_group.nagios_resourcegroup.name}"
+    resource_group_name = "azurerm_resource_group.nagios_resourcegroup.name"
 
     tags {
         environment = "NAGIOS"
@@ -28,8 +28,8 @@ resource "azurerm_virtual_network" "nagios_vnet" {
 # Create subnet
 resource "azurerm_subnet" "nagios_subnet" {
     name                 = "nagios_subnet"
-    resource_group_name  = "${azurerm_resource_group.nagios_resourcegroup.name}"
-    virtual_network_name = "${azurerm_virtual_network.nagios_vnet.name}"
+    resource_group_name  = "azurerm_resource_group.nagios_resourcegroup.name"
+    virtual_network_name = "azurerm_virtual_network.nagios_vnet.name"
     address_prefix       = "16.180.0.0/24"
 }
 
@@ -39,7 +39,7 @@ resource "azurerm_subnet" "nagios_subnet" {
 resource "azurerm_network_security_group" "nagios_sg" {
     name                = "nagios_sg"
     location            = "northeurope"
-    resource_group_name = "${azurerm_resource_group.nagios_resourcegroup.name}"
+    resource_group_name = "azurerm_resource_group.nagios_resourcegroup.name"
 
     
 
@@ -54,7 +54,7 @@ resource "azurerm_network_security_group" "nagios_sg" {
        protocol                   = "Tcp"
        source_port_range          = "*"
        destination_port_range     = "22"
-       source_address_prefix      = "${var.ADMdefault}"
+       source_address_prefix      = "var.ADMdefault"
        destination_address_prefix = "*"
    }
    
@@ -66,7 +66,7 @@ resource "azurerm_network_security_group" "nagios_sg" {
      protocol                   = "Tcp"
      source_port_range          = "*"
      destination_port_range     = "80"
-     source_address_prefix      = "${var.ADMdefault}"
+     source_address_prefix      = "var.ADMdefault"
      destination_address_prefix = "*"
  }
   
